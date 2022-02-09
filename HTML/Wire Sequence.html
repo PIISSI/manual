@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>와이어 시퀀스들 — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/ktane-utils.js"></script>
+    <script src='js/ruleseed.js'></script>
+    <script>
+        var NUM_PAGES = 4;
+        var NUM_PER_PAGE = 3;
+        var NUM_COLOURS = 3;
+        var BLANK_PAGE_COUNT = 1;
+
+        var NumWiresPerColour = NUM_PER_PAGE * (NUM_PAGES - BLANK_PAGE_COUNT);
+
+        function setDefaultRules()
+        {
+            var array = this.PopulateEmptySolution();
+            var array2 = this.PopulateEmptySolution();
+            var array3 = this.PopulateEmptySolution();
+            array[0].push(2);
+            array[1].push(1);
+            array[2].push(0);
+            array[3].push(0);
+            array[3].push(2);
+            array[4].push(1);
+            array[5].push(0);
+            array[5].push(2);
+            array[6].push(0);
+            array[6].push(1);
+            array[6].push(2);
+            array[7].push(0);
+            array[7].push(1);
+            array[8].push(1);
+            array2[0].push(1);
+            array2[1].push(0);
+            array2[1].push(2);
+            array2[2].push(1);
+            array2[3].push(0);
+            array2[4].push(1);
+            array2[5].push(1);
+            array2[5].push(2);
+            array2[6].push(2);
+            array2[7].push(0);
+            array2[7].push(2);
+            array2[8].push(0);
+            array3[0].push(0);
+            array3[0].push(1);
+            array3[0].push(2);
+            array3[1].push(0);
+            array3[1].push(2);
+            array3[2].push(1);
+            array3[3].push(0);
+            array3[3].push(2);
+            array3[4].push(1);
+            array3[5].push(1);
+            array3[5].push(2);
+            array3[6].push(0);
+            array3[6].push(1);
+            array3[7].push(2);
+            array3[8].push(2);
+            setWireSequenceRules(array, array2, array3);
+        }
+
+        function setRules(rnd)
+        {
+            var array = PopulateSolution(rnd);
+            var array2 = PopulateSolution(rnd);
+            var array3 = PopulateSolution(rnd);
+            setWireSequenceRules(array, array2, array3);
+        }
+
+        function setWireSequenceRules(a, a2, a3)
+        {
+            var tables = [["red-table", a], ["blue-table", a2], ["black-table", a3]];
+            var names = ["A", "B", "C"];
+            for (var i = 0; i < tables.length; i++)
+            {
+                var tds = document.querySelectorAll(`table.${tables[i][0]} td.second-col`);
+                for (var j = 0; j < tds.length; j++)
+                    tds[j].innerText = tables[i][1][j].length === 0 ? 'never' : tables[i][1][j].map(ix => names[ix]).map((n, ix) => ix === 0 ? n : ix === tables[i][1][j].length - 1 ? ' 또는' + n : ', ' + n).join('');
+            }
+        }
+
+        function PopulateSolution(rnd)
+        {
+            var result = [];
+            for (var i = 0; i < NumWiresPerColour; i++)
+            {
+                var thisList = [];
+                for (var j = 0; j < NUM_COLOURS; j++)
+                {
+                    if (rnd.nextDouble() > 0.55)
+                        thisList.push(j);
+                }
+                result.push(thisList);
+            }
+            return result;
+        }
+
+        function PopulateEmptySolution()
+        {
+            var result = [];
+            for (var i = 0; i < NumWiresPerColour; i++)
+                result.push([]);
+            return result;
+        }
+    </script>
+</head>
+<body>
+    <div class="section">
+        <div class="page wire-sequence page-bg-07">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes</span>
+                <span class="page-header-section-title">와이어 시퀀스들</span>
+            </div>
+            <div class="page-footer absolute-footer"></div>
+            <div class="page-content">
+                <img src="img/Component/Wire Sequence.svg" class="diagram" />
+                <h2>와이어 시퀀스들에 대하여</h2>
+                <p class="flavour-text">이 메커니즘을 설명하기란 쉬운 일이 아니군요. 꽤 인상적인 기술이지만, 아홉 개의 와이어를 정렬하는 좀더 쉬운 방법도 분명 있었을 텐데요.</p>
+                <ul>
+                    <li>이 모듈에는 와이어가 연결된 패널들 여러 개가 있습니다만, 한 번에 한 패널만 볼 수 있습니다. 아래 화살표 버튼을 누르면 다음 패널로, 위 화살표 버튼을 누르면 이전 패널로 바뀝니다.</li>
+                    <li>현재 패널에서 와이어들을 올바르게 자르는 작업이 끝나지 않았다면 다음 패널로 넘어가지 마세요.</li>
+                    <li>다음 표에 지시된 대로 와이어들을 자릅니다. 와이어 연결 종류는 모듈 내의 모든 패널들 간에 중복 발생할 수 있습니다.</li>
+                </ul>
+                <table class="red-table">
+                    <tr><th colspan="2" class="header">Red Wire Occurrences</th></tr>
+                    <tr><th class="first-col">와이어 연결</th><th class="second-col">이 연결일 경우 절단:</th></tr>
+                    <tr><td class="first-col">첫 번째&nbsp;붉은색 와이어</td><td class="second-col">C</td></tr>
+                    <tr><td class="first-col">두 번째&nbsp;붉은색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">세 번째&nbsp;붉은색 와이어</td><td class="second-col">A</td></tr>
+                    <tr><td class="first-col">네 번째&nbsp;붉은색 와이어</td><td class="second-col">A 또는C</td></tr>
+                    <tr><td class="first-col">다섯 번째&nbsp;붉은색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">여섯 번째&nbsp;붉은색 와이어</td><td class="second-col">A 또는C</td></tr>
+                    <tr><td class="first-col">일곱 번째&nbsp;붉은색 와이어</td><td class="second-col">A, B 또는C</td></tr>
+                    <tr><td class="first-col">여덟 번째&nbsp;붉은색 와이어</td><td class="second-col">A 또는B</td></tr>
+                    <tr><td class="first-col">아홉 번째&nbsp;붉은색 와이어</td><td class="second-col">B</td></tr>
+                </table>
+                <table class="blue-table">
+                    <tr><th colspan="2" class="header">Blue Wire Occurrences</th></tr>
+                    <tr><th class="first-col">와이어 연결</th><th class="second-col">이 연결일 경우 절단:</th></tr>
+                    <tr><td class="first-col">첫 번째&nbsp;파란색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">두 번째&nbsp;파란색 와이어</td><td class="second-col">A 또는C</td></tr>
+                    <tr><td class="first-col">세 번째&nbsp;파란색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">네 번째&nbsp;파란색 와이어</td><td class="second-col">A</td></tr>
+                    <tr><td class="first-col">다섯 번째&nbsp;파란색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">여섯 번째&nbsp;파란색 와이어</td><td class="second-col">B 또는C</td></tr>
+                    <tr><td class="first-col">일곱 번째&nbsp;파란색 와이어</td><td class="second-col">C</td></tr>
+                    <tr><td class="first-col">여덟 번째&nbsp;파란색 와이어</td><td class="second-col">A 또는C</td></tr>
+                    <tr><td class="first-col">아홉 번째&nbsp;파란색 와이어</td><td class="second-col">A</td></tr>
+                </table>
+                <table class="black-table">
+                    <tr><th colspan="2" class="header">Black Wire Occurrences</th></tr>
+                    <tr><th class="first-col">와이어 연결</th><th class="second-col">이 연결일 경우 절단:</th></tr>
+                    <tr><td class="first-col">첫 번째&nbsp;검은색 와이어</td><td class="second-col">A, B 또는C</td></tr>
+                    <tr><td class="first-col">두 번째&nbsp;검은색 와이어</td><td class="second-col">A 또는C</td></tr>
+                    <tr><td class="first-col">세 번째&nbsp;검은색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">네 번째&nbsp;검은색 와이어</td><td class="second-col">A 또는C</td></tr>
+                    <tr><td class="first-col">다섯 번째&nbsp;검은색 와이어</td><td class="second-col">B</td></tr>
+                    <tr><td class="first-col">여섯 번째&nbsp;검은색 와이어</td><td class="second-col">B 또는C</td></tr>
+                    <tr><td class="first-col">일곱 번째&nbsp;검은색 와이어</td><td class="second-col">A 또는B</td></tr>
+                    <tr><td class="first-col">여덟 번째&nbsp;검은색 와이어</td><td class="second-col">C</td></tr>
+                    <tr><td class="first-col">아홉 번째&nbsp;검은색 와이어</td><td class="second-col">C</td></tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">페이지 1/1</div>
+        </div>
+    </div>
+</body>
+</html>
