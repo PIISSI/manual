@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Semaphore — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        table.semaphore-table {
+            width: 100%;
+        }
+
+            table.semaphore-table td {
+                width: 20%;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        img.semaphore-img {
+            width: 5em;
+        }
+
+        img.semaphore-img-small {
+            width: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Semaphore</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Semaphore.svg" class="diagram" />
+                <h2>Semaphore에 대하여</h2>
+                <p class="flavour-text">
+                    이 모듈은 바다에서의 집중을 요구합니다 - 안타깝게도 이 폭탄은 바싹 말라있네요.
+                </p>
+                <p class="appendix-reference">
+                    수기 신호 참고자료는 다음 페이지를 참조하십시오..
+                </p>
+                <ul>
+                    <li>Semaphore 모듈에는 뒤로가기 버튼, 다음 버튼, 그리고 OK 버튼과 수기 신호 표시기가 존재합니다.</li>
+                    <li>뒤로가기 버튼과 다음 버튼을 사용하여 수기 신호 시퀀스를 볼 수 있습니다, 가장 왼쪽에 있는 신호부터 오른쪽으로 진행합니다.</li>
+                    <li>대부분의 수기 신호는 시리얼 넘버에 존재하는 캐릭터를 포함하고 있지만, 하지만 시리얼 넘버에 존재하지 않는 수기 신호가 단 하나 있습니다.</li>
+                    <li>시리얼 넘버에 존재하지 않는 수기 신호를 표시하고 있을 때 OK 버튼을 누르세요.</li>
+                    <li>컨트롤 캐릭터, 예를 들면 '숫자', '글자', '오류', '휴식' 그리고 '취소' 는 올바른 답으로 취급되지 않습니다.</li>
+                </ul>
+            </div>
+            <div class="page-footer relative-footer">페이지 1/2</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Semaphore</span>
+            </div>
+            <div class="page-content">
+                <h3>수기 신호 참고자료</h3>
+                <p>
+                    숫자는 '숫자' 신호를 보낸 후, 그 후에 송신합니다. 비슷하게, 글자들은 '글자' 신호를 보낸 후, 그 후에 송신합니다.
+                </p>
+                <p>
+                    다음 이미지들을 사용하여 수기 신호를 해석하세요.<br />
+                </p>
+                <table class="semaphore-table">
+                    <tr>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Ready.svg" alt="Rest / Space" /><br />휴식 / 공백</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Numeric.svg" alt="Numerals" /><br />숫자</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Error.svg" alt="Error / Attention" /><br />오류 / 집중</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Alpha.svg" alt="A 또는 1" /><br />A 또는 1</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Bravo.svg" alt="B 또는 2" /><br />B 또는 2</td>
+                    </tr>
+                    <tr>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Charlie.svg" alt="C 또는 3" /><br />C 또는 3</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Delta.svg" alt="D 또는 4" /><br />D 또는 4</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Echo.svg" alt="E 또는 5" /><br />E 또는 5</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Foxtrot.svg" alt="F 또는 6" /><br />F 또는 6</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Golf.svg" alt="G 또는 7" /><br />G 또는 7</td>
+                    </tr>
+                    <tr>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Hotel.svg" alt="H 또는 8" /><br />H 또는 8</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_India.svg" alt="I 또는 9" /><br />I 또는 9</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Juliet.svg" alt="J 또는 Letters" /><br />J 또는 글자</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Kilo.svg" alt="K 또는 0" /><br />K 또는 0</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Lima.svg" alt="L" /><br />L</td>
+                    </tr>
+                    <tr>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Mike.svg" alt="M" /><br />M</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_November.svg" alt="N" /><br />N</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Oscar.svg" alt="O" /><br />O</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Papa.svg" alt="P" /><br />P</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Quebec.svg" alt="Q" /><br />Q</td>
+                    </tr>
+                    <tr>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Romeo.svg" alt="R" /><br />R</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Sierra.svg" alt="S" /><br />S</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Tango.svg" alt="T" /><br />T</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Uniform.svg" alt="U" /><br />U</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Victor.svg" alt="V" /><br />V</td>
+                    </tr>
+                    <tr>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Whiskey.svg" alt="W" /><br />W</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_X-ray.svg" alt="X" /><br />X</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Yankee.svg" alt="Y" /><br />Y</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Zulu.svg" alt="Z" /><br />Z</td>
+                        <td><img class="semaphore-img" src="img/Semaphore/Semaphore_Cancel.svg" alt="Cancel / Annul" /><br />취소 / 무효</td>
+                    </tr>
+                </table>
+                <p>
+                    (모든 이미지는 <a href="https://commons.wikimedia.org/wiki/User:Denelson83">Denelson83</a>의 것이며, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a>하에 사용됩니다, <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>를 통해.)
+                </p>
+            </div>
+            <div class="page-footer relative-footer">페이지 2/2</div>
+        </div>
+    </div>
+</body>
+</html>
