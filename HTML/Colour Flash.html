@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Colour Flash — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .condition {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .brother {
+            clear: both;
+            margin: 0.5em 0;
+            overflow: auto;
+        }
+        .brother > .component {
+            float: right;
+            margin-left: .5cm;
+        }
+        .brother > .component > img {
+            width: 2cm;
+        }
+        .brother > .explanation {
+            font-weight: bold;
+        }
+        .brother > .link {
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-01">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Colour Flash</span>
+        </div>
+        <div class="page-content">
+            <img class="diagram" src="img/Component/Colour Flash.svg">
+            <h2>Colour Flash에 대하여</h2>
+            <p class="flavour-text">
+                색깔 구분은 쉽죠. 빨강, 파랑, 초록, 등등... 하지만 그 글자의 색깔이 글자가 의미하는 색깔과 다르다면 좀 더 어려워 질 겁니다...
+            </p>
+
+            <ul>
+                <li>Colour Flash 모듈은 8개의 무작위 색깔의 무작위 단어로 이루어진 시퀸스를 끊임없이 보여줍니다.</li>
+                <li>가능한 색은 Red, Yellow, Green, Blue, Magenta 그리고 White입니다.</li>
+                <li>또한 모듈에는 Yes 버튼과 No 버튼이 존재합니다.</li>
+                <li>Yes 버튼과 No 버튼 중 오직 <em>하나</em>만이 모듈 해제에 필요하지만, 밑의 규칙을 참조하여 올바른 때에 눌러야만 합니다.</li>
+                <li>마지막 항목의 색깔이 밑의 규칙들 중 어떤 것을 참조하여야 하는지 결정합니다.</li>
+                <li>해당하는 규칙들 중에서, 맨 위에서 아래로 내려가며 해당하는 첫 번째 규칙을 따르세요.</li>
+            </ul>
+
+            <table>
+                <tbody><tr>
+                     <td>
+                         <div class="condition">시퀀스의 마지막 단어의 색깔이 Red일 경우:</div>
+                         <div>만약 Green이 단어로서 최소한 세 번 사용되었다면, Green이 색깔 또는 단어로 사용된 3번째 항목일 때 Yes를 누르세요.</div>
+                         <div>위 설명에 해당되지 않고, Blue가 색깔으로 단 한 번 사용되었다면, 단어가 Magenta인 항목일 때 No를 누르세요.</div>
+                         <div>위 설명들 중 해당사항이 없으면, White가 색깔 또는 단어로 사용된 마지막 항목일 때 Yes를 누르세요.</div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <div class="condition">시퀀스의 마지막 단어의 색깔이 Yellow일 경우:</div>
+                         <div>만약 단어 Blue가 Green 색깔으로 존재한다면, Green이 색깔으로 사용된 첫 항목일 때 Yes를 누르세요.</div>
+                         <div>위 설명에 해당되지 않고, 만약 단어 White가 White 또는 Red 색깔으로 존재한다면, 색깔과 단어가 맞지 않는 2번째 항목일 때 Yes를 누르세요.</div>
+                         <div>위 설명들 중 해당사항이 없으면, Magenta가 색깔 또는 단어로 사용된 단어의 개수를 세세요., 그 개수 만큼의 항목일 때 No를 누르세요 (예를들어, 개수가 4인 것은 4번째 항목을 말합니다).</div>
+                     </td>
+                 </tr>
+                 <tr>
+                    <td>
+                         <div class="condition">시퀀스의 마지막 단어의 색깔이 Green일 경우:</div>
+                         <div>만약 똑같은 단어가 색깔만 다르게 연속되게 존재한다면, 5번째 항목일 때 No를 누르세요.</div>
+                         <div>만약 Magenta가 단어로서 최소한 세 번 사용되었다면, Yellow가 색깔 또는 단어로 사용된 1번째 항목일 때 No를 누르세요.</div>
+                         <div>위 설명들 중 해당사항이 없으면, 색깔과 단어가 맞는 항목일 때 Yes를 누르세요.</div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div class="page-footer relative-footer">페이지 1/2</div>
+    </div>
+
+    <div class="page page-bg-02">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Colour Flash</span>
+        </div>
+        <div class="page-content">
+            <p>이전 테이블에서 이어집니다...
+
+            </p><table>
+                <tbody><tr>
+                    <td>
+                        <div class="condition">시퀀스의 마지막 단어의 색깔이 Blue일 경우:</div>
+                        <div>만약 시퀀스 상에 색깔과 단어가 맞지 않는 단어가 세 개 이상이라면, 색깔과 단어가 맞지 않는 1번째 항목일 때 Yes를 누르세요.</div>
+                        <div>만약 단어 Red가 Yellow 색깔으로 존재한다면, 혹은 단어 Yellow가 White 색깔으로 존재한다면, 단어 White가 Red 색깔인 항목일 때 No를 누르세요.</div>
+                        <div>위 설명들 중 해당사항이 없으면, Green가 색깔 또는 단어로 사용된 마지막 항목일 때 Yes를 누르세요.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="condition">시퀀스의 마지막 단어의 색깔이 Magenta일 경우:</div>
+                         <div>만약 똑같은 색깔이 단어만 다르게 연속되게 존재한다면, 3번째 항목일 때 Yes를 누르세요.</div>
+                        <div>만약 단어가 Yellow인 항목의 개수가 색깔이 Blue인 항목의 개수보다 많다면, 단어가 Yellow인 마지막 항목일 때 No를 누르세요.</div>
+                        <div>위 설명들 중 해당사항이 없으면, 7번째 항목의 단어가 항목의 색깔인 첫 항목일 때 No를 누르세요.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="condition">시퀀스의 마지막 단어의 색깔이 White일 경우:</div>
+                        <div>만약 3번째 항목의 단어가 4번째 항목의 단어 또는 5번째 항목의 단어와 동일하다면, Blue가 색깔 또는 단어로 사용된 1번째 항목일 때 No를 누르세요.</div>
+                        <div>만약 단어 Yellow가 Red 색깔으로 존재한다면, Blue가 색깔으로 사용된 마지막 항목일 때 Yes를 누르세요.</div>
+                        <div>위 설명들 중 해당사항이 없으면, No를 누르세요.</div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div class="page-footer relative-footer">페이지 2/2</div>
+    </div>
+</div>
+</body>
+</html>
