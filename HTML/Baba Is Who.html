@@ -18,52 +18,54 @@
             </div>
             <div class="page-content">
                 <img src="img/Component/Baba Is Who.svg" class="diagram">
-                <h2>On the Subject of Baba Is Who?</h2>
-                <p class="flavour-text">Hey, I’ve heard of this game.</p>
+                <h2>Baba Is Who?에 대하여</h2>
+                <p class="flavour-text">어, 이 게임 들어본 것 같아요.</p>
                 <ul>
-                    <li>The module consists of a list of rules and the positions of each of the characters.</li>
-                    <li>The characters are: BABA, KEKE, ME, ROCK, FLAG, and WALL.</li>
-                    <li>The attributes for each of the characters, where each will be one of either YOU, MOVE, DEFEAT, PUSH, WIN, and STOP.</li>
-                    <li>The characters will be shuffled in a 3×2 grid.</li>
-                    <li>The characters in the grid can be pressed. Press the correct one to solve.</li>
+                    <li>이 모듈엔 6개의 규칙들과 6개의 캐릭터들이 놓여있습니다.</li>
+                    <li>캐릭터들의 종류는: BABA, KEKE, ME, ROCK, FLAG, 그리고 WALL이에요.</li>
+                    <li>캐릭터들의 속성은, YOU, MOVE, DEFEAT, PUSH, WIN, 또는 STOP 중 하나로 결정됩니다.</li>
+                    <li>캐릭터들은 3×2 판 위에 무작위로 배치됩니다.</li>
+                    <li>판 위의 캐릭터들은 누를 수 있습니다. 올바른 캐릭터를 누르면 모듈이 해제됩니다.</li>
                 </ul>
 
-                <h3>Rules</h3>
-                <p>Below are rules for the characters, and the attributes. Match up the rules to the attributes to get six different rules by replacing the ellipses with the parts from the other column. For example, BABA is YOU makes the rule, “If the number of batteries is more than four, press the character that is below the character that is DEFEAT”.</p>
-                <p>Then, go through the rules in the order that they are on the module, stopping when you reach a rule that applies. The 3×2 grid loops around.</p>
+                <h3>규칙</h3>
+                <p>하단에 있는 것은 캐릭터들과 속성들에 대한 규칙들입니다. 캐릭터와 속성의 규칙을 연결하여 6개의 규칙을 만드세요. 예를 들면, BABA is YOU 는, “만약에 배터리의 개수, 모듈로 10이 4보다 크다면, DEFEAT 속성의 캐릭터의 아래의 캐릭터를 누르세요.” 라는 규칙이 됩니다.</p>
+                <p>그리고 모듈에 나와있는 규칙들을 위에서 아래로 확인하세요, 해당하는 규칙에서 멈춘 뒤, 규칙에서 말해주는 캐릭터를 누르면 됩니다. 3×2 판의 각 끝은 연결되어 있습니다.</p>
 
                 <table>
                     <tr>
-                        <th>Subjects</th>
-                        <th>Attributes</th>
+                        <th>캐릭터들</th>
+                        <th>속성들</th>
                     </tr>
                     <tr>
-                        <td><strong>BABA:</strong> If the… is more than four, press the character that is…</td>
-                        <td><strong>YOU:</strong> … number of batteries, modulo 10… below the character that is DEFEAT.</td>
+                        <td><strong>BABA:</strong> 만약에... 4보다 크다면, ...를 누르세요.</td>
+                        <td><strong>YOU:</strong> ...배터리의 개수, 모듈로 10이... DEFEAT 속성의 캐릭터의 아래의 캐릭터... </td>
                     </tr>
                     <tr>
-                        <td><strong>KEKE:</strong> If the… is even, press the character below the character that is…</td>
-                        <td><strong>MOVE:</strong> … last digit of the serial number… above the character that is STOP.</td>
+                        <td><strong>KEKE:</strong> 만약에... 짝수라면, ...의 아래의 캐릭터를 누르세요,</td>
+                        <td><strong>MOVE:</strong> ...시리얼 넘버의 마지막 숫자가... STOP 속성의 캐릭터의 위의 캐릭터...</td>
                     </tr>
                     <tr>
-                        <td><strong>ME:</strong> If the… is composite, press the character above the character that is…</td>
-                        <td><strong>DEFEAT:</strong> … number of ports, modulo 10… to the right of the character that is YOU.</td>
+                        <td><strong>ME:</strong> 만약에... 합성수라면, ...의 위의 캐릭터를 누르세요.</td>
+                        <td><strong>DEFEAT:</strong> ...포트의 개수, 모듈로 10이... YOU 속성의 캐릭터의 오른쪽의 캐릭터...</td>
                     </tr>
                     <tr>
-                        <td><strong>ROCK:</strong> If the… is odd, press the character that is to the left from the character that is…</td>
-                        <td><strong>PUSH:</strong> … number of indicators, modulo 10… above and to the left of the character that is WIN.</td>
+                        <td><strong>ROCK:</strong> 만약에... 홀수라면, ...의 왼쪽의 캐릭터를 누르세요.</td>
+                        <td><strong>PUSH:</strong> ...인디케이터의 개수, 모듈로 10이... WIN 속성의 캐릭터의 위의 캐릭터의 왼쪽의 캐릭터...</td>
                     </tr>
                     <tr>
-                        <td><strong>FLAG:</strong> If the… is less than five, press the character that is above and to the right of the character that is…</td>
-                        <td><strong>WIN:</strong> … alphabetical position of the fourth character in the serial number, modulo 10… MOVE.</td>
+                        <td><strong>FLAG:</strong> 만약에... 5보다 작다면, ...의 위의 캐릭터의 오른쪽의 캐릭터를 누르세요.</td>
+                        <td><strong>WIN:</strong> ...시리얼 넘버의 4번째 알파벳의 순서, 모듈로 10이... MOVE 속성의 캐릭터...</td>
                     </tr>
                     <tr>
-                        <td><strong>WALL:</strong> If the… is prime, press the character that is below and to the right of the character that is…</td>
-                        <td><strong>STOP:</strong> … number of modules, modulo 10… below and to the left of the character that is PUSH.</td>
+                        <td><strong>WALL:</strong> 만약에... 소수라면, ...의 아래의 캐릭터의 오른쪽의 캐릭터를 누르세요.</td>
+                        <td><strong>STOP:</strong> ...모듈의 개수, 모듈로 10이... PUSH 속성의 캐릭터의 아래의 캐릭터의 왼쪽의 캐릭터...</td>
                     </tr>
                 </table>
+                <p>만약 아무 규칙도 해당하지 않는다면, YOU 속성의 캐릭터를 누르세요.</p>
+                <p><strong>하지만</strong>, 눌러야 하는 캐릭터의 속성이 DEFEAT라면, 그 캐릭터의 오른쪽의 캐릭터를 대신 누르세요.</p>
             </div>
-            <div class="page-footer relative-footer">Page 1 of 2</div>
+            <div class="page-footer relative-footer">페이지 1/2</div>
         </div>
         <div class="page page-bg-02">
             <div class="page-header">
@@ -71,13 +73,11 @@
                 <span class="page-header-section-title">Baba Is Who?</span>
             </div>
             <div class="page-content">
-                <p>If no rules apply, press the character that is YOU.</p>
-                <p><strong>HOWEVER</strong>, if the button you should have pressed is DEFEAT, submit the button to the right of it instead.</p>
 
                 <table class="center">
                     <tr>
-                        <th>Name</td>
-                        <th>Images</td>
+                        <th>이름</td>
+                        <th>이미지</td>
                     </tr>
                     <tr>
                         <td>BABA</td>
@@ -105,7 +105,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="page-footer relative-footer">Page 2 of 2</div>
+            <div class="page-footer relative-footer">페이지 2/2</div>
         </div>
     </div>
 </body>
