@@ -117,66 +117,66 @@
                 <p class="flavour-text">압박감 속에서는, 체스는 사실 전함들의 게임처럼 느껴질지도 모릅니다.</p>
 
                 <p>이 모듈은 <strong>6×6 체스판</strong>을 기반으로 합니다. <i>(하단 페이지에 레퍼런스가 첨부되어 있습니다.)</i> 또한 모든 말들은 기본적인 체스말의 움직임처럼 움직입니다.</p>
-                <p>The chess module will present with a display and two rows of six buttons each.</p>
+                <p>Chess 모듈은 디스플레이 하나와 6개의 버튼이 두 줄 존재합니다.</p>
 
                 <ul>
-                    <li>There are six unique coordinates that represent six positions on the chessboard.</li>
-                    <li>Use the numbered buttons in the bottom row to browse through the different coordinates. A green LED below the button will indicate the position of the currently selected coordinate.</li>
-                    <li>Using the reference table below, each position can be assigned a certain chess figure.</li>
-                    <li>The chess figures will cover 35 of the 36 possible fields with their combined movesets.</li>
-                    <li>All chess figures are colorless but can block each other's movement.</li>
-                    <li>Find the one field that isn't covered by any of the chess figures and enter the coordinate to defuse the module.</li>
-                    <li>To enter the coordinate, press the letter first, then the number. The LEDs will turn red to confirm the input of a solution.</li>
+                    <li>체스판 위의 6개의 위치를 나타내는 6개의 좌표가 존재합니다.</li>
+                    <li>아래 줄의 숫자 버튼들로 각 좌표를 확인할 수 있습니다. 현재 표시되는 좌표에 해당하는 버튼은 밑의 LED가 초록색으로 빛납니다.</li>
+                    <li>밑의 테이블을 이용해서 각 위치에 특정한 체스말을 놓을 수 있습니다.</li>
+                    <li>이 체스말들의 움직일 수 있는 위치를 합치면 36개의 위치 중 35개의 위치를 덮을 것입니다.</li>
+                    <li>모든 체스말들은 색이 없지만 다른 말의 움직임을 막을 수 있습니다.</li>
+                    <li>모듈을 해제하려면 어떤 체스말도 한 번의 움직임으로 도달할 수 없는 유일한 위치를 찾아내어 제출하세요.</li>
+                    <li>좌표를 제출하려면, 글자를 먼저 제출하고 숫자를 제출하세요. 글자를 누른 후에는 이를 표시하기 위해 LED들이 빨간색으로 빛날 것입니다.</li>
                 </ul>
 
-                <span>Use this table as reference to determine the correct figure for each position:</span>
+                <span>이 테이블을 각 위치에 어떤 체스말이 올 지 결정할 때 사용하세요:</span>
                 <table class="chess">
                     <tr>
                         <td id = "rule1">
-                            <h4>Position #{i}: Monarchy vs Theocracy</h4>
-                            <p>Occupied by a king if Position #{j} is occupied by a queen.</p>
-                            <p>Otherwise, the field is occupied by a bishop.</p>
+                            <h4>위치 #{i}: 군주제 vs 신권정치</h4>
+                            <p>만약 위치 #{j}에 퀸을 놓았다면 킹을 놓으세요.</p>
+                            <p>그렇지 않다면, 비숍을 놓으세요.</p>
                         </td>
                     </tr>
                     <tr>
                         <td id = "rule2">
-                            <h4>Position #{i}: Commander of the Army</h4>
-                            <p>Occupied by a rook if the last digit of the serial number is odd.</p>
-                            <p>Otherwise, the field is occupied by a knight.</p>
+                            <h4>위치 #{i}: 총사령관</h4>
+                            <p>만약 시리얼 넘버의 마지막 숫자가 홀수라면 룩을 놓으세요.</p>
+                            <p>그렇지 않다면, 나이트를 놓으세요.</p>
                         </td>
                     </tr>
                     <tr>
                         <td id = "rule3">
-                            <h4>Position #{i}: A Matter of Regents</h4>
-                            <p>Occupied by a queen if there are less than two rooks on the board.</p>
-                            <p>Otherwise, the field is occupied by a king.</p>
+                            <h4>위치 #{i}: 섭정의 문제</h4>
+                            <p>체스판에 룩이 둘보다 적다면 퀸을 놓으세요.</p>
+                            <p>그렇지 않다면, 킹을 놓으세요.</p>
                         </td>
                     </tr>
                     <tr>
                         <td id = "rule4">
-                            <h4>Position #{i}: The Iron Tower</h4>
-                            <p>Always occupied by a rook.</p>
+                            <h4>위치 #{i}: 철탑</h4>
+                            <p>항상 룩을 놓으세요.</p>
                         </td>
                     </tr>
                     <tr>
                         <td id = "rule5">
-                            <h4>Position #{i}: Conflict between Good and Evil</h4>
-                            <p>Occupied by a queen if the field is white.</p>
-                            <p>Otherwise, the field is occupied by a rook.</p>
+                            <h4>위치 #{i}: 선과 악의 갈등</h4>
+                            <p>이 위치가 흰색 타일이라면 퀸을 놓으세요.</p>
+                            <p>그렇지 않다면, 룩을 놓으세요.</p>
                         </td>
                     </tr>
                     <tr>
                         <td id = "rule6">
-                            <h4>Position #{i}: The Scepter, the Sword, and the Crosier</h4>
-                            <p>Occupied by a queen if there are no other queens on the board.</p>
-                            <p>Otherwise, occupied by a knight if there are no other knights on the board.</p>
-                            <p>Otherwise, the field is occupied by a bishop.</p>
+                            <h4>위치 #{i}: 홀, 검, 그리고 주교장</h4>
+                            <p>체스판에 퀸이 없다면 퀸을 놓으세요.</p>
+                            <p>그렇지 않고, 체스판에 나이트가 없다면 나이트를 놓으세요.</p>
+                            <p>그렇지 않다면, 비숍을 놓으세요.</p>
                         </td>
                     </tr>
                 </table>
 
             </div>
-            <div class="page-footer relative-footer">Page 1 of 2</div>
+            <div class="page-footer relative-footer">페이지 1/2</div>
         </div>
         <div class="page page-bg-02">
             <div class="page-header">
@@ -184,8 +184,8 @@
                 <span class="page-header-section-title">Chess</span>
             </div>
             <div class="page-content">
-                <h4>Chess Board Reference</h4>
-                <p>Use the following graphic as a reference for the chess board layout</p>
+                <h4>체스판 레퍼런스</h4>
+                <p>밑의 그림을 모듈에서 사용하는 체스판의 이해를 위해 사용하세요</p>
                 <img src="img/Chess/Chessboard.png"  id="chess">
                 <div class="chess-vertical">
                     <span id="vertical6">6</span>
@@ -204,7 +204,7 @@
                     <span id="horizontal6">f</span>
                 </div>
             </div>
-            <div class="page-footer relative-footer">Page 2 of 2</div>
+            <div class="page-footer relative-footer">페이지 2/2</div>
         </div>
     </div>
 </body>
